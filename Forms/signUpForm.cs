@@ -73,7 +73,6 @@ namespace ChattApp
                                 }
                                 else
                                 {
-
                                     user.Register_User(userNameTxt.Text, firstNameTxt.Text, lastNameTxt.Text, userPasswordTxt.Text);
                                     MessageBox.Show("user register successfully");
                                     Clear_All_Label_Error();

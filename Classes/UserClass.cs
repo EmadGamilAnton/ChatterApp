@@ -50,7 +50,21 @@ namespace ChattApp.Classes
             dt = DAL.SelectData("user_login", param);
             return dt;
         }
-        public void Update_Status(string userID,int status)
+        public void InsertStatusForFirstTime(int userID, int status)
+        {
+            //This method to change status of user if he close program it shows offline
+            DAL.Open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@userId", SqlDbType.Int);
+            param[0].Value = userID;
+
+            param[1] = new SqlParameter("@status", SqlDbType.Int);
+            param[1].Value = status;
+
+            DAL.ExcutionCommand("InsertStatusForFirstTime", param);
+            DAL.close();
+        }
+        public void Update_Status(int userID,int status)
         {
             //This method to change status of user if he close program it shows offline
             DAL.Open();
@@ -64,9 +78,16 @@ namespace ChattApp.Classes
             DAL.ExcutionCommand("updateStatus", param);
             DAL.close();
         }
- 
+        public DataTable get_Last_User_ID()
+        {
+            // Get users where if they are online
+            DAL.Open();
+            dt = DAL.SelectData("getLastUserID", null);
 
-        public DataTable Get_Online_Users(string usesrID)
+            return dt;
+        }
+
+        public DataTable Get_Online_Users(int usesrID)
         {
             // Get users where if they are online
             DAL.Open();

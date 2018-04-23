@@ -23,10 +23,10 @@ namespace ChattApp
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
             signUpForm frm = new signUpForm();
             frm.ShowDialog();
         }
-
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             Close();
@@ -39,11 +39,11 @@ namespace ChattApp
             if (dt.Rows.Count > 0)
             {
                 Program.FullName = dt.Rows[0][1].ToString();
-                Program.userID = dt.Rows[0][0].ToString();
+                Program.userID =Convert.ToInt32( dt.Rows[0][0].ToString());
                 loginLabelError.Text = "User Login Successfully";
                 loginLabelError.ForeColor = Color.Green;
 
-                user.Update_Status(Program.userID,1);
+                user.Update_Status( Program.userID,1);
                // obj.Update_Ip(obj2.getLocalIp(), userNameTxt.Text);
                 new chattForm().ShowDialog();
             }

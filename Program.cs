@@ -11,7 +11,7 @@ namespace ChattApp
         /// 
 
         public static string FullName;
-        public static string userID;
+        public static int userID;
         [STAThread]
         static void Main()
         {
