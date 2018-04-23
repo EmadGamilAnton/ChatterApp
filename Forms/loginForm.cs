@@ -43,7 +43,7 @@ namespace ChattApp
                 loginLabelError.Text = "User Login Successfully";
                 loginLabelError.ForeColor = Color.Green;
 
-                user.Update_Status( Program.userID,1);
+                user.Update_Status(Program.userID,1);
                // obj.Update_Ip(obj2.getLocalIp(), userNameTxt.Text);
                 new chattForm().ShowDialog();
             }

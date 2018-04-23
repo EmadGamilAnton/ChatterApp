@@ -74,6 +74,9 @@ namespace ChattApp
                                 else
                                 {
                                     user.Register_User(userNameTxt.Text, firstNameTxt.Text, lastNameTxt.Text, userPasswordTxt.Text);
+                                   dt= user.get_Last_User_ID();
+                                    this.getLastIDtxt.Text = dt.Rows[0][0].ToString();
+                                   // user.InsertStatusForFirstTime(Convert.ToInt32(dt.Rows[0][0]), 0);
                                     MessageBox.Show("user register successfully");
                                     Clear_All_Label_Error();
                                 }

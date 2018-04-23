@@ -45,6 +45,7 @@
             this.userNameError = new System.Windows.Forms.Label();
             this.passworError = new System.Windows.Forms.Label();
             this.retypePasswordError = new System.Windows.Forms.Label();
+            this.getLastIDtxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -192,11 +193,20 @@
             this.retypePasswordError.Size = new System.Drawing.Size(0, 17);
             this.retypePasswordError.TabIndex = 13;
             // 
+            // getLastIDtxt
+            // 
+            this.getLastIDtxt.Location = new System.Drawing.Point(749, 64);
+            this.getLastIDtxt.Name = "getLastIDtxt";
+            this.getLastIDtxt.ReadOnly = true;
+            this.getLastIDtxt.Size = new System.Drawing.Size(100, 24);
+            this.getLastIDtxt.TabIndex = 14;
+            // 
             // signUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 472);
+            this.Controls.Add(this.getLastIDtxt);
             this.Controls.Add(this.retypePasswordError);
             this.Controls.Add(this.passworError);
             this.Controls.Add(this.userNameError);
@@ -243,5 +253,6 @@
         private System.Windows.Forms.Label userNameError;
         private System.Windows.Forms.Label passworError;
         private System.Windows.Forms.Label retypePasswordError;
+        public System.Windows.Forms.TextBox getLastIDtxt;
     }
 }
